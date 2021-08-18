@@ -3,7 +3,7 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-
+const nunjucks = require('nunjucks')
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 
@@ -12,8 +12,12 @@ const dbMongo = require('./dbMongo')
 const app = express()
 
 // view engine setup
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+})
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
+app.set('view engine', 'nunjucks')
 
 app.use(logger('dev'))
 app.use(express.json())
