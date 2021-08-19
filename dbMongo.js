@@ -14,8 +14,9 @@ async function run() {
         const users = database.collection('MOCK_DATA')
 
         const query = {first_name: 'Jolene'}
-        const person = await users.findOne(query)
-        console.log(person);
+        const person = await users.find({}).toArray();
+        // console.log(person.map((o)=>JSON.stringify));
+        console.log(person)
     } finally {
         await client.close()
     }

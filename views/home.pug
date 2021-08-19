@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(method='POST' action='/search')
+         input(type='text' name='pizza' placeholder='search terms')
+         select(name='notpizza')
+            option(value='postgres') PostgreSQL
+            option(value='mongo') MongoDB
+         button(type='submit') Submit!
+  a log in
+  br
+  a log out

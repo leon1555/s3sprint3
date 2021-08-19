@@ -12,12 +12,12 @@ const dbMongo = require('./dbMongo')
 const app = express()
 
 // view engine setup
-nunjucks.configure('views', {
-  autoescape: true,
-  express: app
-})
+// nunjucks.configure('views', {
+//   autoescape: true,
+//   express: app
+// })
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'nunjucks')
+app.set('view engine', 'pug')
 
 app.use(logger('dev'))
 app.use(express.json())
