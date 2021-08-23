@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Welcome #{username}!
+  p Please enter your search and select your database
+  form(method='POST' action='/search')
+         input(type='text' name='search_term' placeholder='search terms')
+         select(name='database')
+            option(value='postgres') PostgreSQL
+            option(value='mongo') MongoDB
+         button(type='submit') Submit!

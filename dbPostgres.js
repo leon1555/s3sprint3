@@ -7,5 +7,5 @@ const pool = new pg.Pool({
     host: "localhost",
     database: "sprint3",
     password: passwordPostgres,
-    port: 5432,
+    port: 5432
   });

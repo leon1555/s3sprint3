@@ -1,6 +1,3 @@
-// MongoDB 
-// const mongoose = require('mongoose')
-// mongoose.Promise = require('bluebird')
 const passwordMongo = require('../password_variables/mongodb_atlas')
 const { MongoClient } = require('mongodb')
 const uri = `mongodb+srv://leon:${passwordMongo}@sprint3.05fm9.mongodb.net/sprint3?retryWrites=true&w=majority`
@@ -13,10 +10,10 @@ async function run() {
         const database = client.db('sprint3')
         const users = database.collection('MOCK_DATA')
 
-        const query = {first_name: 'Jolene'}
-        const person = await users.find({}).toArray();
+        // const query = {first_name: 'Jolene'}
+        // const person = await users.find({}).toArray();
         // console.log(person.map((o)=>JSON.stringify));
-        console.log(person)
+        // console.log(person)
     } finally {
         await client.close()
     }
