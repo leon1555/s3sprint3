@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const MongoController = require('../controllers/mongo.controller')
-// const PostgresController = require('../controllers/postgres.controller')
+const PostgresController = require('../controllers/postgres.controller')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -23,6 +23,6 @@ router.post('/search', function(req, res, next){
 });
 
 router.get('/mongodb/', MongoController)
-// router.get('postgres/', PostgresController)
+router.get('postgres/', PostgresController)
 
 module.exports = router;
